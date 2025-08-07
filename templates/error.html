@@ -1,0 +1,12 @@
+{% include "base.html" %}
+
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='error.css') }}">
+<div class="error-container">
+    <div class="error-card">
+        <h1 class="error-title">{{ error_code }}</h1>
+        <div class="error-message">{{ error_message }}</div>
+        <a href="/" class="error-home-button">Return to Home</a>
+    </div>
+</div>
+{% endblock %}

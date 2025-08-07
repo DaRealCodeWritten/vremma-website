@@ -1,0 +1,43 @@
+{% include 'base.html' %}
+<!DOCTYPE html>
+<link rel="stylesheet" href="{{ url_for('static', filename='login/login.css') }}">\
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-box">
+            <div class="login-header">
+                <h1>Login</h1>
+            </div>
+        {% if error == 1 %}
+        <div class="error-box">
+            Username or password invalid
+        </div>
+        {% endif %}
+        <script>
+            let box = document.querySelector('.error-box');
+            if (box != null) {
+                box.classList.add('show');
+            }
+        </script>
+
+        <form class="login-form" id="loginForm" method="post" action="/login">
+            {{ form.hidden_tag() }}
+                <div class="form-group">
+                    {{ form.username() }}
+                    <div class="error-message" id="emailError">Please enter a valid email address</div>
+                </div>
+                <div class="form-group">
+                    {{ form.password() }}
+                    <div class="error-message" id="passwordError">Password is required</div>
+                </div>
+            {{ form.submit(class_="loginbutton") }}
+            </form>
+        </div>
+    </div>
+</body>
+</html>

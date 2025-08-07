@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='base.css') }}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+</head>
+<body>
+<nav class="navbar">
+    <div class="logo">
+        <a href="#home">
+            <img src="{{ url_for('static', filename='favicon.ico') }}" alt="Vremma Logo">
+        </a>
+    </div>
+    <div class="nav-links">
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/contact">Contact</a></li>
+            <li class="dropdown">
+                <a href="/projects">Projects</a>
+                <div class="dropdown-content">
+                    <a href="/projects/booking">Booking System</a>
+                </div>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<div class="content">
+
+</div>
+</body>
+</html>

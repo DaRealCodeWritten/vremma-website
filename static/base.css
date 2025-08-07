@@ -1,0 +1,133 @@
+:root {
+    --primary-purple: #8A2BE2;
+    --light-purple: #9D4EDD;
+    --dark-purple: #4B0082;
+    --hover-purple: #B565F7;
+    --transparent-black: rgba(0, 0, 0, 0.9);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url('/static/vremma_background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+}
+
+.navbar {
+    background-color: var(--transparent-black);
+    padding: 0.5rem 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    border-bottom: 2px solid var(--primary-purple);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    margin-left: 2rem;
+}
+
+.logo img {
+    height: 40px;
+    width: auto;
+    vertical-align: middle;
+    transition: transform 0.3s ease;
+}
+
+.logo img:hover {
+    transform: scale(1.05);
+}
+
+.nav-links {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.nav-links ul {
+    list-style-type: none;
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-links li {
+    position: relative;
+}
+
+.nav-links li a {
+    color: var(--light-purple);
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+    display: block;
+    padding: 0.5rem 0;
+}
+
+.nav-links li a:hover {
+    color: var(--hover-purple);
+    text-shadow: 0 0 8px rgba(181, 101, 247, 0.5);
+}
+
+/* Dropdown styles */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: var(--transparent-black);
+    min-width: 200px;
+    box-shadow: 0 8px 16px rgba(74, 0, 130, 0.4);
+    z-index: 1;
+    border-radius: 4px;
+    top: 100%;
+    left: 0;
+    padding: 0.5rem 0;
+    border: 1px solid var(--dark-purple);
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content a {
+    color: var(--light-purple);
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.dropdown-content a:hover {
+    background-color: rgba(138, 43, 226, 0.2);
+    color: var(--hover-purple);
+    padding-left: 20px;
+}
+
+/* Dropdown arrow */
+.dropdown > a::after {
+    content: " ▼";
+    font-size: 0.8em;
+    vertical-align: middle;
+    color: var(--primary-purple);
+}
+
+.content {
+    padding: 20px;
+    color: white;
+    margin-top: 60px; /* Adjusted to match navbar height */
+}
+
+/* Add subtle purple glow to dropdown on hover */
+.dropdown:hover .dropdown-content {
+    box-shadow: 0 8px 16px rgba(138, 43, 226, 0.3);
+}

@@ -1,0 +1,8 @@
+{
+  "name": "PyRC",
+  "description": "Async event driven IRC library for Python",
+  "status": "COMPLETE",
+  "technologies": ["irc", "python", "library", "sockets"],
+  "github_url": "https://github.com/DaRealCodeWritten/pyrc",
+  "demo_url": null
+}

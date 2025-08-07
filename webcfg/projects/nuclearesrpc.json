@@ -1,0 +1,8 @@
+{
+  "name": "NuclearesRPC",
+  "description": "Discord RPC Client for Nucleares game",
+  "status": "COMPLETE",
+  "technologies": ["python", "sockets", "http", "discord"],
+  "github_url": "https://github.com/DaRealCodeWritten/NuclearesRPC",
+  "demo_url": null
+}

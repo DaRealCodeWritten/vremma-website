@@ -1,0 +1,141 @@
+:root {
+    --primary-purple: #8A2BE2;
+    --light-purple: #9D4EDD;
+    --dark-purple: #4B0082;
+    --hover-purple: #B565F7;
+    --transparent-black: rgba(0, 0, 0, 0.9);
+}
+
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.login-box {
+    background-color: var(--transparent-black);
+    padding: 2.5rem;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(138, 43, 226, 0.2);
+    width: 100%;
+    max-width: 400px;
+    border: 1px solid var(--primary-purple);
+}
+
+.login-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.login-header h1 {
+    color: var(--light-purple);
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.form-group {
+    position: relative;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--dark-purple);
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.3);
+    color: white;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: var(--primary-purple);
+    box-shadow: 0 0 10px rgba(138, 43, 226, 0.3);
+}
+
+.form-group input::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.loginbutton {
+    background-color: var(--primary-purple);
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 1rem;
+}
+
+.loginbutton:hover {
+    background-color: var(--hover-purple);
+    box-shadow: 0 0 15px rgba(138, 43, 226, 0.5);
+}
+
+.forgot-password {
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.forgot-password a {
+    color: var(--light-purple);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+}
+
+.forgot-password a:hover {
+    color: var(--hover-purple);
+    text-shadow: 0 0 8px rgba(181, 101, 247, 0.5);
+}
+
+.error-message {
+    color: #ff4444;
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    display: none;
+}
+
+/* Simple animation for form submission */
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-10px); }
+    75% { transform: translateX(10px); }
+}
+
+.shake {
+    animation: shake 0.5s ease-in-out;
+}
+
+.error-box {
+    background-color: rgba(255, 0, 0, 0.1);
+    border: 1px solid #ff4444;
+    border-radius: 5px;
+    padding: 12px;
+    margin-bottom: 1.5rem;
+    color: #ff4444;
+    text-align: center;
+    font-size: 0.9rem;
+    display: none;
+}
+
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.error-box.show {
+    display: block;
+    animation: fadeIn 0.3s ease-out;
+}

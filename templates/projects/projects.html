@@ -1,0 +1,51 @@
+{# templates/projects.html #}
+{% include "base.html" %}
+
+{% block title %}Projects - Vremma{% endblock %}
+<head>
+  <title>Project Home</title>
+</head>
+{% block content %}
+<div class="projects-container">
+  <h1 class="projects-title">My Projects</h1>
+  <div class="projects-grid">
+    {% for project in projects %}
+    <div class="project-card">
+      <div class="project-header">
+        <h2>{{ project.name }}</h2>
+        {% if project.status %}
+        <span class="project-status {{ project.status }}">{{ project.status }}</span>
+        {% endif %}
+      </div>
+      <p class="project-description">{{ project.description }}</p>
+      <div class="project-tech">
+        {% for tech in project.technologies %}
+        <span class="tech-tag">{{ tech }}</span>
+        {% endfor %}
+      </div>
+      <div class="project-links">
+        {% if project.github_url %}
+        <a href="{{ project.github_url }}" class="project-link github" target="_blank" rel="noopener">
+          <i class="fab fa-github"></i> GitHub
+        </a>
+        {% endif %}
+        {% if project.demo_url %}
+        <a href="{{ project.demo_url }}" class="project-link demo" target="_blank" rel="noopener">
+          <i class="fas fa-external-link-alt"></i> Live Demo
+        </a>
+        {% endif %}
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}
+
+{% block head %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<link rel="stylesheet" href="{{ url_for('static', filename='projects/projects.css') }}">
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='projects/projects.js') }}"></script>
+{% endblock %}

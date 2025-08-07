@@ -1,0 +1,8 @@
+{
+  "name": "Website",
+  "description": "Brand website for my uses",
+  "status": "ACTIVE",
+  "technologies": ["web", "python", "sql (mariadb)", "cryptography"],
+  "github_url": null,
+  "demo_url": "https://vremma.net"
+}
